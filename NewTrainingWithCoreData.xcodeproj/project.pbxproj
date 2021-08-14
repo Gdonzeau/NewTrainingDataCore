@@ -16,6 +16,7 @@
 		04531A7926C6D835004C71D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04531A7726C6D835004C71D8 /* LaunchScreen.storyboard */; };
 		04531A8326C6D955004C71D8 /* EntityTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04531A8226C6D955004C71D8 /* EntityTest.swift */; };
 		04531A8A26C6D9CA004C71D8 /* EntityUsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04531A8926C6D9CA004C71D8 /* EntityUsable.swift */; };
+		04531A9026C70F3E004C71D8 /* ServiceCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04531A8F26C70F3E004C71D8 /* ServiceCoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		04531A7A26C6D835004C71D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04531A8226C6D955004C71D8 /* EntityTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityTest.swift; sourceTree = "<group>"; };
 		04531A8926C6D9CA004C71D8 /* EntityUsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityUsable.swift; sourceTree = "<group>"; };
+		04531A8F26C70F3E004C71D8 /* ServiceCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		04531A6826C6D831004C71D8 /* NewTrainingWithCoreData */ = {
 			isa = PBXGroup;
 			children = (
+				04531A8E26C70F00004C71D8 /* Services */,
 				04531A8526C6D95C004C71D8 /* Model */,
 				04531A8626C6D967004C71D8 /* View */,
 				04531A8726C6D96D004C71D8 /* Controller */,
@@ -84,7 +87,7 @@
 		04531A8626C6D967004C71D8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				04531A6D26C6D831004C71D8 /* ViewController.swift */,
+				04531A6F26C6D831004C71D8 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -92,6 +95,7 @@
 		04531A8726C6D96D004C71D8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				04531A6D26C6D831004C71D8 /* ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -101,11 +105,18 @@
 			children = (
 				04531A6926C6D831004C71D8 /* AppDelegate.swift */,
 				04531A6B26C6D831004C71D8 /* SceneDelegate.swift */,
-				04531A6F26C6D831004C71D8 /* Main.storyboard */,
 				04531A7526C6D835004C71D8 /* Assets.xcassets */,
 				04531A7726C6D835004C71D8 /* LaunchScreen.storyboard */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		04531A8E26C70F00004C71D8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				04531A8F26C70F3E004C71D8 /* ServiceCoreDataManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +193,7 @@
 				04531A8326C6D955004C71D8 /* EntityTest.swift in Sources */,
 				04531A7426C6D831004C71D8 /* NewTrainingWithCoreData.xcdatamodeld in Sources */,
 				04531A6A26C6D831004C71D8 /* AppDelegate.swift in Sources */,
+				04531A9026C70F3E004C71D8 /* ServiceCoreDataManager.swift in Sources */,
 				04531A8A26C6D9CA004C71D8 /* EntityUsable.swift in Sources */,
 				04531A6C26C6D831004C71D8 /* SceneDelegate.swift in Sources */,
 			);
