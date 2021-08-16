@@ -38,54 +38,17 @@ class ViewController: UIViewController {
         }
         // Nous supprimons la première entité appelée
         print("Nous supprimons \(entitiesSaved[0].name)")
-        entityCoreDataManager.deleteRecipe(entityToDelete: entitiesSaved[0])
+        entityCoreDataManager.deleteEntity(entityToDelete: entitiesSaved[0])
         // Puis on crée une nouvelle entité...
         
         newCreateEntity()
         print("Nous avons créé l'entité \(String(describing: entityCreated.name)) avec \(entityCreated.invited).")
-        
+        //... que l'on sauvegarde
         entityCoreDataManager.newSaveEntity(name: entityCreated.name, invited: entityCreated.invited)
         // Fin du Test
         
     }
-    // Méthodes pour les tests
-    /*
-    private func convertUsableEntityToCoreDataEntity(entityToConvert:EntityUsable) -> EntityTest {
-        let entityCoreData = EntityTest(context: AppDelegate.viewContext)
-        entityCoreData.name = entityToConvert.name
-        entityCoreData.invited = entityToConvert.invited
-        return entityCoreData
-    }
-    private func convertCoreDataEntityToUsableEntity(entityToConvert:EntityTest) -> EntityUsable {
-        if let name = entityToConvert.name {
-        let entityUsable = EntityUsable(name: name, invited: entityToConvert.invited)
-            return entityUsable
-        }
-        return EntityUsable(name: "", invited: 0.00) // En cas d'échec on revoie une entité nulle.
-    }
-    */
     
-    private func deleteEntity() {
-        
-    }
-    //private func saveEntity(entityToSave: EntityUsable) {
-    private func saveEntity() {
-        //entityCreated = EntityTest() // On vide l'entité de base avant d'appeler une sauvegarde
-        /*
-        let entityCoreData = EntityTest(context: AppDelegate.viewContext)
-        entityCoreData.name = entityToSave.name
-        entityCoreData.invited = entityToSave.invited
- */
-        try? AppDelegate.viewContext.save() // On essaie de svg
-    }
-    /*
-    private func createEntity() -> EntityTest {
-        let newEntity = EntityTest(context: AppDelegate.viewContext)
-        let randomNumber = Int.random(in: 1 ... 100)
-        newEntity.name = "Name" + String(randomNumber)
-        newEntity.invited = Float.random(in: 1 ... 100)
-        return newEntity
-    }*/
     private func newCreateEntity() {
         let randomNumber = Int.random(in: 1 ... 100)
         let name = "Name" + String(randomNumber)
@@ -93,7 +56,5 @@ class ViewController: UIViewController {
         entityCreated.name = name
         entityCreated.invited = invited
     }
-    // Fin des méthodes pour les tests
-
 }
 

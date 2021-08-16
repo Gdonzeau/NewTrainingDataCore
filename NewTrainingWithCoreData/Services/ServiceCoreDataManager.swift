@@ -15,6 +15,7 @@ class EntityCoreDataManager {
     init(persistentContainer: NSPersistentContainer = (UIApplication.shared.delegate as! AppDelegate).persistentContainer) {
         self.viewContext = persistentContainer.viewContext
     }
+    
     static var all:[EntityTest] {
         let request: NSFetchRequest<EntityTest> = EntityTest.fetchRequest()
         guard let entities = try? AppDelegate.viewContext.fetch(request) else {
@@ -22,7 +23,7 @@ class EntityCoreDataManager {
         }
         return entities
     }
-    // EntityTest
+    
     func loadEntities() -> [EntityUsable] {
         let request: NSFetchRequest<EntityTest> = EntityTest.fetchRequest()
         var entitiesUsable = [EntityUsable]()
@@ -35,20 +36,6 @@ class EntityCoreDataManager {
                 entitiesUsable.append(newEntity)
             }
         }
-        /*
-        do {
-            let entitiesReceived = try AppDelegate.viewContext.fetch(request)
-            for object in entitiesReceived {
-                if let name = object.name {
-                    let newEntity = EntityUsable(name: name, invited: object.invited)
-                    entitiesUsable.append(newEntity)
-                }
-            }
-            
-        }catch {
-            print("Zut, une erreur")
-        }
-        */
         return entitiesUsable
     }
     
@@ -58,24 +45,6 @@ class EntityCoreDataManager {
         entityToSave.invited = invited
         try? AppDelegate.viewContext.save()
     }
-    
-    /*
-     func loadRecipes() -> [RecipeStored] {
-     
-     let request: NSFetchRequest<RecipeStored> = RecipeStored.fetchRequest()
-     
-     do {
-     let storedRecipes = try viewContext.fetch(request)
-     return storedRecipes
-     } catch {
-     return []
-     }
-     }
-     */
-    
-    
-    //func saveRecipe(recipeToSave: Recipe) {
-    
     
     func deleteEntity(entityToDelete: EntityUsable) {
         let request: NSFetchRequest<EntityTest> = EntityTest.fetchRequest()
@@ -94,7 +63,7 @@ class EntityCoreDataManager {
         AppDelegate.viewContext.delete(entityToDeleteConverted)
         try? viewContext.save()
     }
-    // On ne touche pas... Et on n'utilise pas
+    
     func deleteAll() {
         let request: NSFetchRequest<EntityTest> = EntityTest.fetchRequest()
         do {
